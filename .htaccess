@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Check if the requested file exists and is not a directory
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    # Rewrite all other requests to index.php
+    RewriteRule ^ index.php [L]
+</IfModule>
